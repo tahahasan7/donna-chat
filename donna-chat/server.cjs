@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 require("dotenv").config();
+console.log("▶️ Loaded GEMINI_API_KEY:", process.env.GEMINI_API_KEY);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -11,8 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // Initialize Gemini API - Use environment variable or fallback
-const API_KEY =
-  process.env.GEMINI_API_KEY || "AIzaSyAif54Ai-QSbbhhBemSf5qOK4fDkI-BEus";
+const API_KEY = process.env.GEMINI_API_KEY;
 
 if (!API_KEY) {
   console.error("⚠️  GEMINI_API_KEY environment variable is not set!");
