@@ -143,7 +143,7 @@ function ChatPage() {
   };
 
   return (
-    <>
+    <div className="chat-page-container">
       {messages.length > 0 || isStreaming ? (
         <div className="message-list" ref={chatContentRef}>
           {messages.map((msg, index) => (
@@ -233,7 +233,7 @@ function ChatPage() {
           </div>
         </Form>
       </footer>
-    </>
+    </div>
   );
 }
 
