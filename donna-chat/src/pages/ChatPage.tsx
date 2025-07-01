@@ -34,6 +34,17 @@ function ChatPage() {
     useOutletContext<AppLoaderData>();
 
   useEffect(() => {
+    if (searchParams.get("newChat")) {
+      setMessages([]);
+      setMessage("");
+      setCharCount(0);
+      setIsStreaming(false);
+      setStreamingMessage("");
+      setSearchParams({});
+    }
+  }, [searchParams, setSearchParams]);
+
+  useEffect(() => {
     const urlPrompt = searchParams.get("prompt");
     if (urlPrompt) {
       handleSendToAI(urlPrompt);
