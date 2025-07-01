@@ -12,7 +12,6 @@ export async function appLoader() {
     suggestedPrompts: [
       "Tell me about my next meeting",
       "What's on my calendar today?",
-      "Summarize my emails",
     ],
   };
 }
